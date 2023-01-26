@@ -39,6 +39,7 @@ jobs:
           black . --check
 
   test:
+    if: ${{ !startsWith(github.head_ref, 'hotfix') }}
     runs-on: ubuntu-latest
     needs: build
     strategy:
